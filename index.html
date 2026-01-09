@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Fustat:wght@200..800&display=swap" rel="stylesheet">
+    <title>Coptic/Arabic</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: seagreen;
+        }
+        #txt_input {
+            width: 700px;
+            height: 50px;
+            font-size: 34px;
+            font-family: "Fustat", sans-serif;
+            text-align: center;
+        }
+        div {
+            margin: 15px auto;
+            text-align: center;
+        }
+        #btn_translate {
+            width: 120px;
+            height: 45px;
+            font-size: 24px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="lbl_main">Coptic</h1>
+    
+    <form>
+        <div>
+            <input type="text" name="txt_input" id="txt_input" />
+        </div>
+        <div>
+            <input type="button" value="Translate" id="btn_translate" />
+        </div>
+        
+    </form>
+
+
+    <script>
+
+        function sub_letter(letter){
+            let char;
+            switch (letter) {
+                case "ا":
+                case "أ":
+                    char = "ⲁ";     break;
+                case "ب":
+                    char = "ⲡ";     break;
+                case "ت":
+                case "ط":
+                case "ث":
+                    char = "ⲑ";     break;
+                case "ج":
+                case "غ":
+                    char = "ⲅ";     break;
+                case "ح":
+                case "ه":
+                    char = "ϩ";     break;
+                case "خ":
+                    char = "ϧ";     break;
+                case "د":
+                    char = "ⲇ";     break;
+                case "ذ":
+                case "ز":
+                case "ظ":
+                    char = "ⲍ";     break;
+                case "ر":
+                    char = "ⲣ";     break;
+                case "س":
+                case "ص":
+                    char = "ⲥ";     break;
+                case "ش":
+                    char = "ϭ";     break;
+                case "ض":
+                    char = "ⲧ";     break;
+                case "ع":
+                    char = "ⲉ";     break;
+                case "ف":
+                    char = "ϥ";     break;
+                case "ق":
+                case "ك":
+                    char = "ⲕ";     break;
+                case "ل":
+                    char = "ⲗ";     break;
+                case "م":
+                    char = "ⲙ";     break;
+                case "ن":
+                    char = "ⲛ";     break;
+                case "و":
+                    char = "ⲃ";     break;
+                case "ي":
+                case "ى":
+                    char = "ⲓ";     break;
+                case " ":
+                    char = " ";     break;
+
+                case "،":
+                    char = "-";     break;
+                case ".":
+                    char = ".";     break;
+
+                default:
+                    char = "xXx";   break;
+            }
+            return char;
+        }
+
+        let coptic_text = "";
+
+        const btn_translate_event = document.getElementById("btn_translate");
+        btn_translate_event.addEventListener("click", function() {
+            // document.getElementById("demo").innerHTML = "Hello World";
+            // console.log( document.getElementById("txt_input").value );
+
+            const input_letters = document.getElementById("txt_input").value.split("");
+            input_letters.forEach(letter => {
+                // console.log(letter);
+                // console.log(letter, sub_letter(letter));
+                coptic_text += sub_letter(letter);
+            });
+
+            console.log(coptic_text);
+            document.getElementById("lbl_main").innerText = coptic_text;
+            coptic_text = "";
+        });
+    </script>
+</body>
+</html>
