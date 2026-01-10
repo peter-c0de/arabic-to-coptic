@@ -6,44 +6,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Fustat:wght@200..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Coptic/Arabic</title>
-    <style>
-        h1 {
-            text-align: center;
-            color: seagreen;
-        }
-        #txt_input {
-            width: 700px;
-            height: 50px;
-            font-size: 34px;
-            font-family: "Fustat", sans-serif;
-            text-align: center;
-        }
-        div {
-            margin: 15px auto;
-            text-align: center;
-        }
-        #btn_translate {
-            width: 120px;
-            height: 45px;
-            font-size: 24px;
-
-        }
-    </style>
 </head>
 <body>
 
-    <h1 id="lbl_main">Coptic</h1>
+    <div class="m-4 text-center">
+        <h1 class="text-6xl text-emerald-600" id="lbl_main">Coptic</h1>
     
-    <form>
-        <div>
-            <input type="text" name="txt_input" id="txt_input" />
-        </div>
-        <div>
-            <input type="button" value="Translate" id="btn_translate" />
-        </div>
-        
-    </form>
+        <form>
+            <div>
+                <input class="m-7 p-3 border-2 border-zinc-600 text-center text-4xl w-2/3" type="text" name="txt_input" id="txt_input" />
+            </div>
+            <div>
+                <input type="button" class="m-4 py-3 px-5 bg-zinc-400 text-white rounded-lg hover:bg-zinc-500" value="Translate" id="btn_translate" />
+            </div>
+            
+        </form>
+    </div>
 
 
     <script>
